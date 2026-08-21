@@ -37,6 +37,7 @@ jobs:
             --exclude='.github/' \
             --exclude='.vs/' \
             --exclude='_config.yml' \
+            --exclude='.gitignore' \
             ./ /tmp/download/
 
 
