@@ -1,0 +1,181 @@
+name: Update Download Branch
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-download:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # 1. Checkout the main branch
+      # ------------------------------------------------------------
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+
+      # ------------------------------------------------------------
+      # 2. Copy files to temporary directory
+      #    while excluding files not needed in the download version
+      # ------------------------------------------------------------
+      - name: Prepare Download files
+        run: |
+          mkdir -p /tmp/download
+
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.vs/' \
+            --exclude='_config.yml' \
+            ./ /tmp/download/
+
+
+      # ------------------------------------------------------------
+      # 3. Convert Jekyll HTML into offline-compatible HTML
+      # ------------------------------------------------------------
+      - name: Convert Jekyll links for offline use
+        run: |
+          python3 <<'PY'
+          import os
+          import re
+
+          root = "/tmp/download"
+
+          # Matches:
+          # {{ '/content/css/style.css' | relative_url }}
+          # {{ "/content/css/style.css" | relative_url }}
+          relative_url_pattern = re.compile(
+              r"""\{\{\s*(['"])(.*?)\1\s*\|\s*relative_url\s*\}\}"""
+          )
+
+          for current_dir, dirs, files in os.walk(root):
+              for filename in files:
+                  if not filename.lower().endswith(".html"):
+                      continue
+
+                  filepath = os.path.join(current_dir, filename)
+
+                  with open(filepath, "r", encoding="utf-8") as f:
+                      content = f.read()
+
+                  # ------------------------------------------------
+                  # Remove empty Jekyll front matter:
+                  #
+                  # ---
+                  # ---
+                  # ------------------------------------------------
+                  content = re.sub(
+                      r"\A\s*---\s*\r?\n---\s*\r?\n",
+                      "",
+                      content
+                  )
+
+                  # Directory containing this HTML file,
+                  # relative to the site's root.
+                  html_dir = os.path.dirname(filepath)
+
+                  def convert_relative_url(match):
+                      url = match.group(2)
+
+                      # Handle the Jekyll site root:
+                      #
+                      # {{ '/' | relative_url }}
+                      #
+                      # Start Guide.html should point to itself.
+                      # Nested pages should point back to Start Guide.html.
+                      if url == "/":
+                          target = os.path.join(root, "Start Guide.html")
+                      else:
+                          # Remove leading /
+                          clean_url = url.lstrip("/")
+
+                          target = os.path.join(root, clean_url)
+
+                      # Work out the path relative to THIS HTML file.
+                      relative = os.path.relpath(target, html_dir)
+
+                      # Browsers expect forward slashes
+                      relative = relative.replace(os.sep, "/")
+
+                      return relative
+
+                  content = relative_url_pattern.sub(
+                      convert_relative_url,
+                      content
+                  )
+
+                  with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+                      f.write(content)
+
+                  print(f"Converted: {filepath}")
+
+          PY
+
+
+      # ------------------------------------------------------------
+      # 4. Rename index.html to Start Guide.html
+      # ------------------------------------------------------------
+      - name: Rename start page
+        run: |
+          if [ -f "/tmp/download/index.html" ]; then
+            mv "/tmp/download/index.html" "/tmp/download/Start Guide.html"
+          fi
+
+
+      # ------------------------------------------------------------
+      # 5. Switch to / create the Download branch
+      # ------------------------------------------------------------
+      - name: Switch to Download branch
+        run: |
+          if git ls-remote --exit-code --heads origin Download; then
+            git fetch origin Download
+            git switch -C Download origin/Download
+          else
+            git switch --orphan Download
+          fi
+
+
+      # ------------------------------------------------------------
+      # 6. Remove existing Download branch contents
+      # ------------------------------------------------------------
+      - name: Clear Download branch
+        run: |
+          git rm -rf . || true
+          git clean -fdx
+
+
+      # ------------------------------------------------------------
+      # 7. Copy generated offline site into Download branch
+      # ------------------------------------------------------------
+      - name: Copy Download files
+        run: |
+          cp -a /tmp/download/. .
+
+
+      # ------------------------------------------------------------
+      # 8. Commit and push the Download branch
+      # ------------------------------------------------------------
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update downloadable guide"
+          git push origin Download
