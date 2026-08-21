@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,65 +13,64 @@
 
 <body>
 
-<header class="site-header">
-    <a href="../../index.html">← Back to options</a>
+    <header class="site-header">
+        <a href="../../index.html">← Back to options</a>
 
-    <h1>Option 1</h1>
+        <h1>Option 1</h1>
 
-    <p>
-        Follow the steps below to complete the installation.
-    </p>
-</header>
+        <p>
+            Follow the steps below to complete the installation.
+        </p>
+    </header>
 
-<main>
+    <main>
 
-    <div class="guide-carousel">
+        <div class="guide-carousel">
 
-        <button class="carousel-button previous">
-            ‹
-        </button>
+            <button class="carousel-button previous">
+                ‹
+            </button>
 
-        <div class="carousel-content">
+            <div class="carousel-content">
 
-            <div class="carousel-image">
-                <img
-                    id="guide-image"
-                    src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
-                    alt="Step 1">
-            </div>
-
-            <div class="carousel-description">
-
-                <div class="step-number">
-                    Step <span id="current-step">1</span>
-                    of
-                    <span id="total-steps">3</span>
+                <div class="carousel-image">
+                    <img id="guide-image"
+                         src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
+                         alt="Step 1">
                 </div>
 
-                <h2 id="guide-title">
-                    Open the settings
-                </h2>
+                <div class="carousel-description">
 
-                <p id="guide-description">
-                    Open the application's settings menu by clicking
-                    the Settings button shown in the image.
-                </p>
+                    <div class="step-number">
+                        Step <span id="current-step">1</span>
+                        of
+                        <span id="total-steps">3</span>
+                    </div>
+
+                    <h2 id="guide-title">
+                        Open the settings
+                    </h2>
+
+                    <p id="guide-description">
+                        Open the application's settings menu by clicking
+                        the Settings button shown in the image.
+                    </p>
+
+                </div>
 
             </div>
+
+            <button class="carousel-button next">
+                ›
+            </button>
 
         </div>
 
-        <button class="carousel-button next">
-            ›
-        </button>
+        <div class="carousel-dots" id="carousel-dots"></div>
 
-    </div>
+    </main>
 
-    <div class="carousel-dots" id="carousel-dots"></div>
-
-</main>
-
-<script>
+    <script>
     const guideSteps = [
         {
             image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
@@ -90,9 +91,9 @@
                 "Find the plugin in the list and click Install. Wait for the installation to finish before continuing."
         }
     ];
-</script>
+    </script>
 
-<script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
+    <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
 
 </body>
 </html>
