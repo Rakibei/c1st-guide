@@ -10,6 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 concurrency:
   group: "pages"
@@ -83,3 +84,39 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+        
+      - name: Delete old deployments
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Get github-pages deployments, newest first
+          DEPLOYMENTS=$(gh api \
+            "/repos/$GH_REPO/deployments?environment=github-pages&per_page=100" \
+            --jq 'sort_by(.created_at) | reverse | .[].id')
+
+          FIRST=true
+
+          for DEPLOYMENT_ID in $DEPLOYMENTS; do
+            # Keep newest deployment
+            if [ "$FIRST" = true ]; then
+              echo "Keeping newest deployment: $DEPLOYMENT_ID"
+              FIRST=false
+              continue
+            fi
+
+            echo "Removing old deployment: $DEPLOYMENT_ID"
+
+            # Deployments must be inactive before GitHub lets us delete them
+            gh api \
+              --method POST \
+              "/repos/$GH_REPO/deployments/$DEPLOYMENT_ID/statuses" \
+              -f state=inactive \
+              >/dev/null || true
+
+            gh api \
+              --method DELETE \
+              "/repos/$GH_REPO/deployments/$DEPLOYMENT_ID" \
+              >/dev/null || true
+          done
