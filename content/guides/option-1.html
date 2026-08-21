@@ -6,7 +6,7 @@
 
     <title>Option 1 - Setup Guide</title>
 
-    <link rel="stylesheet" href="../content/css/style.css">
+    <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
             <div class="carousel-image">
                 <img
                     id="guide-image"
-                    src="../content/images/option-1/step-1.png"
+                    src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
                     alt="Step 1">
             </div>
 
@@ -72,19 +72,19 @@
 <script>
     const guideSteps = [
         {
-            image: "../content/images/option-1/step-1.png",
+            image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
             title: "Open the settings",
             description:
                 "Open the application's settings menu by clicking the Settings button shown in the image."
         },
         {
-            image: "../content/images/option-1/step-2.png",
+            image: "{{ '/content/images/option-1/step-2.png' | relative_url }}",
             title: "Select Plugins",
             description:
                 "Once the settings window is open, select the Plugins section from the menu on the left."
         },
         {
-            image: "../content/images/option-1/step-3.png",
+            image: "{{ '/content/images/option-1/step-3.png' | relative_url }}",
             title: "Install the plugin",
             description:
                 "Find the plugin in the list and click Install. Wait for the installation to finish before continuing."
@@ -92,7 +92,7 @@
     ];
 </script>
 
-<script src="../content/js/carousel.js"></script>
+<script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
 
 </body>
 </html>
