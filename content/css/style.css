@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "bwgradual";
+    src: url("../fonts/bwgradual.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* Backgrounds */
     --color-background: #f5f6f8;
@@ -54,7 +61,7 @@ body {
 
     .site-header h1 {
         font-size: 36px;
-        font-family: 'Bw Gradual', sans-serif
+        font-family: 'bwgradual', sans-serif
     }
 
 /* Option cards */
