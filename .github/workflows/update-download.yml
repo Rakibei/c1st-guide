@@ -40,6 +40,11 @@ jobs:
                     --exclude='.gitignore' \
                     --exclude='package-lock.json' \
                     --exclude='package.json' \
+                    --exclude='eslint.config.mjs' \
+                    --exclude='.stylelintignore' \
+                    --exclude='.prettierignore' \
+                    --exclude='prettier.config.mjs' \
+                    --exclude='stylelint.config.mjs' \
                     ./ /tmp/download/
 
             # ------------------------------------------------------------
