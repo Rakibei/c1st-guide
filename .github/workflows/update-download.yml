@@ -35,8 +35,11 @@ jobs:
                     --exclude='.git/' \
                     --exclude='.github/' \
                     --exclude='.vs/' \
+                    --exclude='node_modules/' \
                     --exclude='_config.yml' \
                     --exclude='.gitignore' \
+                    --exclude='package-lock.json' \
+                    --exclude='package.json' \
                     ./ /tmp/download/
 
             # ------------------------------------------------------------
