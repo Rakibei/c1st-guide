@@ -16,6 +16,14 @@
     <header class="site-header">
         <h1>C1st Guide</h1>
         <p>Vælg hvad du vil gøre.</p>
+
+        <div class="guide-search">
+            <input type="search"
+                   id="guide-search"
+                   placeholder="Søg efter en guide..."
+                   aria-label="Søg efter en guide"
+                   autocomplete="off">
+        </div>
     </header>
 
     <main class="option-grid">
@@ -63,6 +71,12 @@
         </a>
 
     </main>
+
+    <p id="no-search-results" class="no-search-results" hidden>
+        Ingen guides matcher din søgning.
+    </p>
+
+    <script src="content/js/search.js"></script>
 
 </body>
 </html>
