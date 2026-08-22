@@ -1,99 +1,86 @@
 ---
 ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lav Salg - C1st Guide</title>
+        <title>Lav Salg - C1st Guide</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ '/content/images/favicon.png' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
-</head>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{{ '/content/images/favicon.png' | relative_url }}"
+        >
+        <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
+    </head>
 
-<body>
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
 
-    <header class="site-header">
-        <a href="../../index.html">← Tilbage til start</a>
+            <h1>Lav Salg</h1>
 
-        <h1>Lav Salg</h1>
+            <p>Lav et salg i C1st.</p>
+        </header>
 
-        <p>
-            Lav et salg i C1st.
-        </p>
-    </header>
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
 
-    <main>
-
-        <div class="guide-carousel">
-
-            <button class="carousel-button previous">
-                ‹
-            </button>
-
-            <div class="carousel-content">
-
-                <div class="carousel-image">
-                    <img id="guide-image"
-                         src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
-                         alt="Step 1">
-                </div>
-
-                <div class="carousel-description">
-
-                    <div class="step-number">
-                        Trin <span id="current-step">1</span>
-                        af
-                        <span id="total-steps">3</span>
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img
+                            id="guide-image"
+                            src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
+                            alt="Step 1"
+                        >
                     </div>
 
-                    <h2 id="guide-title">
-                        Gå til Kasse
-                    </h2>
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step">1</span>
+                            af
+                            <span id="total-steps">3</span>
+                        </div>
 
-                    <p id="guide-description">
-                        Gå til Kasse og scan/vælg den vare, som kunden vil købe.
-                    </p>
+                        <h2 id="guide-title">Gå til Kasse</h2>
 
+                        <p id="guide-description">
+                            Gå til Kasse og scan/vælg den vare, som kunden vil købe.
+                        </p>
+                    </div>
                 </div>
 
+                <button class="carousel-button next">›</button>
             </div>
 
-            <button class="carousel-button next">
-                ›
-            </button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
 
-        </div>
+        <script>
+            window.guideSteps = [
+                {
+                    image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
+                    title: 'Gå til Kasse',
+                    description: 'Gå til Kasse og scan/vælg den vare, som kunden vil købe.',
+                },
+                {
+                    image: "{{ '/content/images/option-1/step-2.png' | relative_url }}",
+                    title: 'Tjek kassen',
+                    description:
+                        "Når alle vare er tilføjet, dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Betal'.",
+                },
+                {
+                    image: "{{ '/content/images/option-1/step-3.png' | relative_url }}",
+                    title: 'Vælg betalingsmetode',
+                    description:
+                        'Vælg den betalingsmetode, som kunden vil bruge for at afslutte salget. Du kan udskrive en kvittering efter salget er afsluttet.',
+                },
+            ];
+        </script>
 
-        <div class="carousel-dots" id="carousel-dots"></div>
-
-    </main>
-
-    <script>
-    const guideSteps = [
-        {
-            image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
-            title: "Gå til Kasse",
-            description:
-                "Gå til Kasse og scan/vælg den vare, som kunden vil købe."
-        },
-        {
-            image: "{{ '/content/images/option-1/step-2.png' | relative_url }}",
-            title: "Tjek kassen",
-            description:
-                "Når alle vare er tilføjet, dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Betal'."
-        },
-        {
-            image: "{{ '/content/images/option-1/step-3.png' | relative_url }}",
-            title: "Vælg betalingsmetode",
-            description:
-                "Vælg den betalingsmetode, som kunden vil bruge for at afslutte salget. Du kan udskrive en kvittering efter salget er afsluttet."
-        }
-    ];
-    </script>
-
-    <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
-
-</body>
+        <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
+    </body>
 </html>

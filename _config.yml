@@ -2,4 +2,4 @@ title: Start Guide
 description: Start Guide
 
 exclude:
-  - README.md
+    - README.md

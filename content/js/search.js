@@ -3,15 +3,12 @@ const guideCards = document.querySelectorAll(".option-card");
 const noResults = document.getElementById("no-search-results");
 
 searchInput.addEventListener("input", () => {
-    const searchTerm = searchInput.value
-        .trim()
-        .toLocaleLowerCase("da-DK");
+    const searchTerm = searchInput.value.trim().toLocaleLowerCase("da-DK");
 
     let visibleCards = 0;
 
-    guideCards.forEach(card => {
-        const cardText = card.textContent
-            .toLocaleLowerCase("da-DK");
+    guideCards.forEach((card) => {
+        const cardText = card.textContent.toLocaleLowerCase("da-DK");
 
         const matches = cardText.includes(searchTerm);
 
