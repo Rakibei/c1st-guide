@@ -1,34 +1,28 @@
 let currentStep = 0;
 
+const guideSteps = window.guideSteps;
+
 const image = document.getElementById("guide-image");
 const title = document.getElementById("guide-title");
 const description = document.getElementById("guide-description");
 
-const currentStepElement =
-    document.getElementById("current-step");
+const currentStepElement = document.getElementById("current-step");
 
-const totalStepsElement =
-    document.getElementById("total-steps");
+const totalStepsElement = document.getElementById("total-steps");
 
-const dotsContainer =
-    document.getElementById("carousel-dots");
+const dotsContainer = document.getElementById("carousel-dots");
 
-const previousButton =
-    document.querySelector(".previous");
+const previousButton = document.querySelector(".previous");
 
-const nextButton =
-    document.querySelector(".next");
-
+const nextButton = document.querySelector(".next");
 
 totalStepsElement.textContent = guideSteps.length;
-
 
 /*
  * Create the navigation dots
  */
 
 guideSteps.forEach((step, index) => {
-
     const dot = document.createElement("button");
 
     dot.classList.add("carousel-dot");
@@ -41,9 +35,7 @@ guideSteps.forEach((step, index) => {
     dotsContainer.appendChild(dot);
 });
 
-
 function updateCarousel() {
-
     const step = guideSteps[currentStep];
 
     image.src = step.image;
@@ -53,30 +45,20 @@ function updateCarousel() {
 
     description.textContent = step.description;
 
-    currentStepElement.textContent =
-        currentStep + 1;
-
+    currentStepElement.textContent = currentStep + 1;
 
     /*
      * Update navigation dots
      */
 
-    const dots =
-        document.querySelectorAll(".carousel-dot");
+    const dots = document.querySelectorAll(".carousel-dot");
 
     dots.forEach((dot, index) => {
-
-        dot.classList.toggle(
-            "active",
-            index === currentStep
-        );
-
+        dot.classList.toggle("active", index === currentStep);
     });
 }
 
-
 previousButton.addEventListener("click", () => {
-
     currentStep--;
 
     if (currentStep < 0) {
@@ -84,12 +66,9 @@ previousButton.addEventListener("click", () => {
     }
 
     updateCarousel();
-
 });
 
-
 nextButton.addEventListener("click", () => {
-
     currentStep++;
 
     if (currentStep >= guideSteps.length) {
@@ -97,8 +76,6 @@ nextButton.addEventListener("click", () => {
     }
 
     updateCarousel();
-
 });
-
 
 updateCarousel();

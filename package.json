@@ -1,0 +1,35 @@
+{
+    "name": "c1st-guide",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint:js": "eslint .",
+        "lint:css": "stylelint \"**/*.css\"",
+        "lint": "npm run lint:js && npm run lint:css",
+        "fix": "eslint . --fix && stylelint \"**/*.css\" --fix && prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rakibei/c1st-guide.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/Rakibei/c1st-guide/issues"
+    },
+    "homepage": "https://github.com/Rakibei/c1st-guide#readme",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@shopify/prettier-plugin-liquid": "^1.11.0",
+        "eslint": "^10.9.0",
+        "globals": "^17.11.0",
+        "prettier": "^3.9.0",
+        "stylelint": "^17.14.1",
+        "stylelint-config-standard": "^40.0.0"
+    }
+}

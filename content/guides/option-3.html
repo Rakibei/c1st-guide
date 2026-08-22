@@ -1,97 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Opret Vare - C1st Guide</title>
+        <title>Opret Vare - C1st Guide</title>
 
-    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../images/favicon.png"
+        >
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
 
-<body>
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
 
-    <header class="site-header">
-        <a href="../../index.html">← Tilbage til start</a>
+            <h1>Opret Vare</h1>
 
-        <h1>Opret Vare</h1>
+            <p>Opret en ny vare i C1st.</p>
+        </header>
 
-        <p>
-            Opret en ny vare i C1st.
-        </p>
-    </header>
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
 
-    <main>
-
-        <div class="guide-carousel">
-
-            <button class="carousel-button previous">
-                ‹
-            </button>
-
-            <div class="carousel-content">
-
-                <div class="carousel-image">
-                    <img id="guide-image"
-                         src="../images/option-3/step-1.png"
-                         alt="Step 1">
-                </div>
-
-                <div class="carousel-description">
-
-                    <div class="step-number">
-                        Trin <span id="current-step">1</span>
-                        af
-                        <span id="total-steps">3</span>
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img
+                            id="guide-image"
+                            src="../images/option-3/step-1.png"
+                            alt="Step 1"
+                        >
                     </div>
 
-                    <h2 id="guide-title">
-                        Gå til Vare
-                    </h2>
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step">1</span>
+                            af
+                            <span id="total-steps">3</span>
+                        </div>
 
-                    <p id="guide-description">
-                        Gå til Vare for at oprette en ny vare.
-                    </p>
+                        <h2 id="guide-title">Gå til Vare</h2>
 
+                        <p id="guide-description">Gå til Vare for at oprette en ny vare.</p>
+                    </div>
                 </div>
 
+                <button class="carousel-button next">›</button>
             </div>
 
-            <button class="carousel-button next">
-                ›
-            </button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
 
-        </div>
+        <script>
+            window.guideSteps = [
+                {
+                    image: "../images/option-3/step-1.png",
+                    title: 'Gå til Vare',
+                    description: 'Gå til Vare for at oprette en ny vare.',
+                },
+                {
+                    image: "../images/option-3/step-2.png",
+                    title: 'Lav ny vare',
+                    description:
+                        "Tryk på den blå 'Ny vare' for at starte oprettelsen af en ny vare.",
+                },
+                {
+                    image: "../images/option-3/step-3.png",
+                    title: 'Skriv vareinformation',
+                    description:
+                        "Indtast den nødvendige information om den nye vare. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på 'Opret Ny Vare' for at oprette varen.",
+                },
+            ];
+        </script>
 
-        <div class="carousel-dots" id="carousel-dots"></div>
-
-    </main>
-
-    <script>
-    const guideSteps = [
-        {
-            image: "../images/option-3/step-1.png",
-            title: "Gå til Vare",
-            description:
-                "Gå til Vare for at oprette en ny vare."
-        },
-        {
-            image: "../images/option-3/step-2.png",
-            title: "Lav ny vare",
-            description:
-                "Tryk på den blå 'Ny vare' for at starte oprettelsen af en ny vare."
-        },
-        {
-            image: "../images/option-3/step-3.png",
-            title: "Skriv vareinformation",
-            description:
-                "Indtast den nødvendige information om den nye vare. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på 'Opret Ny Vare' for at oprette varen."
-        }
-    ];
-    </script>
-
-    <script src="../js/carousel.js"></script>
-
-</body>
+        <script src="../js/carousel.js"></script>
+    </body>
 </html>
