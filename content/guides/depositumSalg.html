@@ -1,0 +1,85 @@
+---
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Change <title>-->
+        <title>Depositum på Sag - C1st Guide</title>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{{ '/content/images/favicon.png' | relative_url }}"
+        >
+        <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
+
+            <!--Change <h1> and <p>-->
+            <h1>Depositum på Sag</h1>
+
+            <p>Lav et depositum på en sag i C1st.</p>
+        </header>
+
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
+
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img id="guide-image"
+                             src=""
+                             alt="">
+                    </div>
+
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step"></span>
+                            af
+                            <span id="total-steps"></span>
+                        </div>
+
+                        <h2 id="guide-title"></h2>
+
+                        <p id="guide-description"></p>
+                    </div>
+                </div>
+
+                <button class="carousel-button next">›</button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
+
+        <!--Only change the guideSteps array to modify the guide steps-->
+        <script>
+            window.guideSteps = [
+                {
+                    image: "{{ '/content/images/depositumSalg/step-1.png' | relative_url }}",
+                    title: 'Tryk på "Depositum"',
+                    description: 'Find den sag som skal laves depositum på, og tryk på "Depositum".',
+                },
+                {
+                    image: "{{ '/content/images/depositumSalg/step-2.png' | relative_url }}",
+                    title: 'Indtast beløb',
+                    description:
+                        'Indtast det beløb som skal lægges på depositum, og tryk på "Gå til betaling".',
+                },
+                {
+                    image: "{{ '/content/images/depositumSalg/step-3.png' | relative_url }}",
+                    title: 'Færdiggør betaling',
+                    description:
+                        'Færdiggør betalingen for depositummet, dette vil blive fjernet fra den endelig pris af sagen.',
+                },
+            ];
+        </script>
+
+        <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
+    </body>
+</html>
