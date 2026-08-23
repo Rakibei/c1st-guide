@@ -20,6 +20,7 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
+            <!--Change <h1> and <p>-->
             <h1>Lav Salg</h1>
 
             <p>Lav et salg i C1st.</p>
@@ -31,11 +32,9 @@
 
                 <div class="carousel-content">
                     <div class="carousel-image">
-                        <img
-                            id="guide-image"
-                            src="{{ '/content/images/lavSalg/step-1.png' | relative_url }}"
-                            alt="Step 1"
-                        >
+                        <img id="guide-image"
+                             src="{{ '/content/images/lavSalg/step-1.png' | relative_url }}"
+                             alt="Step 1">
                     </div>
 
                     <div class="carousel-description">
@@ -59,6 +58,7 @@
             <div class="carousel-dots" id="carousel-dots"></div>
         </main>
 
+        <!--Only change the guideSteps array to modify the guide steps-->
         <script>
             window.guideSteps = [
                 {

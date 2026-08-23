@@ -121,6 +121,12 @@ jobs:
                               content
                           )
 
+                          content = re.sub(
+                              r"""(?i)(href\s*=\s*["'])([^"']*?)index\.html((?:[?#][^"']*)?)(["'])""",
+                              r"\1\2Start Guide.html\3\4",
+                              content
+                          )
+
                           with open(filepath, "w", encoding="utf-8", newline="\n") as f:
                               f.write(content)
 
