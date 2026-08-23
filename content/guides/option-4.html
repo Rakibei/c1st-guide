@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Retur køb - C1st Guide</title>
+        <title>Opret Sag - C1st Guide</title>
 
         <link
             rel="icon"
@@ -20,9 +20,9 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <h1>Retur køb</h1>
+            <h1>Opret Sag</h1>
 
-            <p>Retur et køb i C1st.</p>
+            <p>Opret en ny sag i C1st.</p>
         </header>
 
         <main>
@@ -33,7 +33,7 @@
                     <div class="carousel-image">
                         <img
                             id="guide-image"
-                            src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
+                            src="{{ '/content/images/option-4/step-1.png' | relative_url }}"
                             alt="Step 1"
                         >
                     </div>
@@ -42,12 +42,12 @@
                         <div class="step-number">
                             Trin <span id="current-step">1</span>
                             af
-                            <span id="total-steps">3</span>
+                            <span id="total-steps">6</span>
                         </div>
 
-                        <h2 id="guide-title">Gå til Vare</h2>
+                        <h2 id="guide-title">Gå til Sagstyring</h2>
 
-                        <p id="guide-description">Gå til Sagstyring og opret en ny sag.</p>
+                        <p id="guide-description">Gå til Sagstyring for at oprette en ny sag.</p>
                     </div>
                 </div>
 
@@ -60,37 +60,38 @@
         <script>
             window.guideSteps = [
                 {
-                    image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
-                    title: 'Gå til Kasse',
-                    description: '',
+                    image: "{{ '/content/images/option-4/step-1.png' | relative_url }}",
+                    title: 'Gå til Sagstyring',
+                    description: 'Gå til Sagstyring for at oprette en ny sag.',
                 },
                 {
                     image: "{{ '/content/images/option-4/step-2.png' | relative_url }}",
-                    title: 'Gå til Salgshistorik',
-                    description: "Tryk på 'Salgshistorik' for at gå til salgshistorikken.",
+                    title: 'Lav ny sag',
+                    description: "Tryk på den blå 'Ny sag' for at starte oprettelsen af en ny sag.",
                 },
                 {
                     image: "{{ '/content/images/option-4/step-3.png' | relative_url }}",
-                    title: 'Søg efter salg',
+                    title: 'Skriv telefonnummer',
                     description:
-                        'Søg efter det bøn-nr på salget, som skal returneres, og klik på salget.',
+                        'Indtast kundens telefonnummer, hvis de ikke findes, så opret dem som ny kunde.',
                 },
                 {
-                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
-                    title: 'Vælg vare',
-                    description: "Vælg de vare, som skal returneres, og klik på 'Retur'.",
+                    image: "{{ '/content/images/option-4/step-4.png' | relative_url }}",
+                    title: 'Tilføj kundens enhed',
+                    description:
+                        "Tryk på 'Ny kundeenhed' og indtast det nødvendige information om kundens enhed.",
                 },
                 {
-                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
-                    title: 'Tjek vare',
+                    image: "{{ '/content/images/option-4/step-5.png' | relative_url }}",
+                    title: 'Indtast sagsinformation',
                     description:
-                        "Dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Retur'.",
+                        "Indtast de nødvendige informationer, og scan de vare som bruges i sagen. Når det er gjort klik på 'Opret sag'.",
                 },
                 {
                     image: "{{ '/content/images/option-4/step-6.png' | relative_url }}",
-                    title: 'Vælg betalingsmetode',
+                    title: 'Print information',
                     description:
-                        'Vælg den betalingsmetode, hvor kunden vil have pengene returneret.',
+                        'Print værksteds- og indleveringsseddel, og giv kunden indleveringsseddelen.',
                 },
             ];
         </script>

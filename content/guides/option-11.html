@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Opret Vare - C1st Guide</title>
+        <title>Retur køb - C1st Guide</title>
 
         <link
             rel="icon"
@@ -20,9 +20,9 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <h1>Opret Vare</h1>
+            <h1>Retur køb</h1>
 
-            <p>Opret en ny vare i C1st.</p>
+            <p>Retur et køb i C1st.</p>
         </header>
 
         <main>
@@ -33,7 +33,7 @@
                     <div class="carousel-image">
                         <img
                             id="guide-image"
-                            src="{{ '/content/images/option-3/step-1.png' | relative_url }}"
+                            src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
                             alt="Step 1"
                         >
                     </div>
@@ -47,7 +47,7 @@
 
                         <h2 id="guide-title">Gå til Vare</h2>
 
-                        <p id="guide-description">Gå til Vare for at oprette en ny vare.</p>
+                        <p id="guide-description">Gå til Sagstyring og opret en ny sag.</p>
                     </div>
                 </div>
 
@@ -60,21 +60,37 @@
         <script>
             window.guideSteps = [
                 {
-                    image: "{{ '/content/images/option-3/step-1.png' | relative_url }}",
-                    title: 'Gå til Vare',
-                    description: 'Gå til Vare for at oprette en ny vare.',
+                    image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
+                    title: 'Gå til Kasse',
+                    description: '',
                 },
                 {
-                    image: "{{ '/content/images/option-3/step-2.png' | relative_url }}",
-                    title: 'Lav ny vare',
-                    description:
-                        "Tryk på den blå 'Ny vare' for at starte oprettelsen af en ny vare.",
+                    image: "{{ '/content/images/option-11/step-2.png' | relative_url }}",
+                    title: 'Gå til Salgshistorik',
+                    description: "Tryk på 'Salgshistorik' for at gå til salgshistorikken.",
                 },
                 {
-                    image: "{{ '/content/images/option-3/step-3.png' | relative_url }}",
-                    title: 'Skriv vareinformation',
+                    image: "{{ '/content/images/option-11/step-3.png' | relative_url }}",
+                    title: 'Søg efter salg',
                     description:
-                        "Indtast den nødvendige information om den nye vare. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på 'Opret Ny Vare' for at oprette varen.",
+                        'Søg efter det bøn-nr på salget, som skal returneres, og klik på salget.',
+                },
+                {
+                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
+                    title: 'Vælg vare',
+                    description: "Vælg de vare, som skal returneres, og klik på 'Retur'.",
+                },
+                {
+                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
+                    title: 'Tjek vare',
+                    description:
+                        "Dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Retur'.",
+                },
+                {
+                    image: "{{ '/content/images/option-11/step-6.png' | relative_url }}",
+                    title: 'Vælg betalingsmetode',
+                    description:
+                        'Vælg den betalingsmetode, hvor kunden vil have pengene returneret.',
                 },
             ];
         </script>
