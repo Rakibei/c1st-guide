@@ -2,13 +2,13 @@ title: Start Guide
 description: Start Guide
 
 exclude:
-  - README.md
-  - node_modules
-  - Gemfile
-  - Gemfile.lock
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - package.json
-  - package-lock.json
+    - README.md
+    - node_modules
+    - Gemfile
+    - Gemfile.lock
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+    - package.json
+    - package-lock.json

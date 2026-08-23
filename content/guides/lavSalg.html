@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Retur køb - C1st Guide</title>
+        <title>Lav Salg - C1st Guide</title>
 
         <link
             rel="icon"
@@ -20,9 +20,9 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <h1>Retur køb</h1>
+            <h1>Lav Salg</h1>
 
-            <p>Retur et køb i C1st.</p>
+            <p>Lav et salg i C1st.</p>
         </header>
 
         <main>
@@ -33,7 +33,7 @@
                     <div class="carousel-image">
                         <img
                             id="guide-image"
-                            src="{{ '/content/images/option-1/step-1.png' | relative_url }}"
+                            src="{{ '/content/images/lavSalg/step-1.png' | relative_url }}"
                             alt="Step 1"
                         >
                     </div>
@@ -45,9 +45,11 @@
                             <span id="total-steps">3</span>
                         </div>
 
-                        <h2 id="guide-title">Gå til Vare</h2>
+                        <h2 id="guide-title">Gå til Kasse</h2>
 
-                        <p id="guide-description">Gå til Sagstyring og opret en ny sag.</p>
+                        <p id="guide-description">
+                            Gå til Kasse og scan/vælg den vare, som kunden vil købe.
+                        </p>
                     </div>
                 </div>
 
@@ -60,37 +62,21 @@
         <script>
             window.guideSteps = [
                 {
-                    image: "{{ '/content/images/option-1/step-1.png' | relative_url }}",
+                    image: "{{ '/content/images/lavSalg/step-1.png' | relative_url }}",
                     title: 'Gå til Kasse',
-                    description: '',
+                    description: 'Gå til Kasse og scan/vælg den vare, som kunden vil købe.',
                 },
                 {
-                    image: "{{ '/content/images/option-11/step-2.png' | relative_url }}",
-                    title: 'Gå til Salgshistorik',
-                    description: "Tryk på 'Salgshistorik' for at gå til salgshistorikken.",
-                },
-                {
-                    image: "{{ '/content/images/option-11/step-3.png' | relative_url }}",
-                    title: 'Søg efter salg',
+                    image: "{{ '/content/images/lavSalg/step-2.png' | relative_url }}",
+                    title: 'Tjek kassen',
                     description:
-                        'Søg efter det bøn-nr på salget, som skal returneres, og klik på salget.',
+                        "Når alle vare er tilføjet, dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Betal'.",
                 },
                 {
-                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
-                    title: 'Vælg vare',
-                    description: "Vælg de vare, som skal returneres, og klik på 'Retur'.",
-                },
-                {
-                    image: "{{ '/content/images/placeholder.png' | relative_url }}",
-                    title: 'Tjek vare',
-                    description:
-                        "Dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på 'Retur'.",
-                },
-                {
-                    image: "{{ '/content/images/option-11/step-6.png' | relative_url }}",
+                    image: "{{ '/content/images/lavSalg/step-3.png' | relative_url }}",
                     title: 'Vælg betalingsmetode',
                     description:
-                        'Vælg den betalingsmetode, hvor kunden vil have pengene returneret.',
+                        'Vælg den betalingsmetode, som kunden vil bruge for at afslutte salget. Du kan udskrive en kvittering efter salget er afsluttet.',
                 },
             ];
         </script>
