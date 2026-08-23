@@ -5,9 +5,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <!--Change <title>-->
-        <title>Opret Vare - C1st Guide</title>
+        <title>Parker Salg - C1st Guide</title>
 
         <link
             rel="icon"
@@ -22,9 +22,9 @@
             <a href="../../index.html">← Tilbage til start</a>
 
             <!--Change <h1> and <p>-->
-            <h1>Opret Vare</h1>
+            <h1>Parker Salg</h1>
 
-            <p>Opret en ny vare i C1st.</p>
+            <p>Parker et salg i C1st.</p>
         </header>
 
         <main>
@@ -40,14 +40,14 @@
 
                     <div class="carousel-description">
                         <div class="step-number">
-                            Trin <span id="current-step">1</span>
+                            Trin <span id="current-step"></span>
                             af
-                            <span id="total-steps">3</span>
+                            <span id="total-steps"></span>
                         </div>
 
-                        <h2 id="guide-title">Gå til Vare</h2>
+                        <h2 id="guide-title"></h2>
 
-                        <p id="guide-description">Gå til Vare for at oprette en ny vare.</p>
+                        <p id="guide-description"></p>
                     </div>
                 </div>
 
@@ -61,21 +61,21 @@
         <script>
             window.guideSteps = [
                 {
-                    image: "{{ '/content/images/opretVare/step-1.png' | relative_url }}",
-                    title: 'Gå til Vare',
-                    description: 'Gå til Vare for at oprette en ny vare.',
+                    image: "{{ '/content/images/givRabat/step-1.png' | relative_url }}",
+                    title: 'Tryk på ur ikonet',
+                    description: 'Ved kurven tryk på ur ikonet.',
                 },
                 {
-                    image: "{{ '/content/images/opretVare/step-2.png' | relative_url }}",
-                    title: 'Lav ny vare',
+                    image: "{{ '/content/images/parkerSalg/step-2.png' | relative_url }}",
+                    title: 'Parker salg',
                     description:
-                        "Tryk på den blå 'Ny vare' for at starte oprettelsen af en ny vare.",
+                        'Skriv en note omkring salget hvis nødvendigt, derefter tryk på "Parker salg".',
                 },
                 {
-                    image: "{{ '/content/images/opretVare/step-3.png' | relative_url }}",
-                    title: 'Skriv vareinformation',
+                    image: "{{ '/content/images/parkerSalg/step-3.png' | relative_url }}",
+                    title: 'Hent det parkerede salg',
                     description:
-                        "Indtast den nødvendige information om den nye vare. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på 'Opret Ny Vare' for at oprette varen.",
+                        'Med en tom kurv, tryk på "ur ikonet", og vælg det parkerede salg du vil hente.',
                 },
             ];
         </script>
