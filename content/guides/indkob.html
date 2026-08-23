@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--Change <title>-->
+        <!-- Change <title> -->
         <title>Indkøb - C1st Guide</title>
 
         <link
@@ -21,7 +21,7 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <!--Change <h1> and <p>-->
+            <!-- Change <h1> and <p> -->
             <h1>Indkøb</h1>
 
             <p>Lav et indkøb i C1st.</p>
@@ -33,21 +33,23 @@
 
                 <div class="carousel-content">
                     <div class="carousel-image">
-                        <img id="guide-image"
-                             src=""
-                             alt="">
+                        <img
+                            id="guide-image"
+                            src=""
+                            alt=""
+                        >
                     </div>
 
                     <div class="carousel-description">
                         <div class="step-number">
-                            Trin <span id="current-step">1</span>
+                            Trin <span id="current-step"></span>
                             af
-                            <span id="total-steps">3</span>
+                            <span id="total-steps"></span>
                         </div>
 
-                        <h2 id="guide-title">Gå til Vare</h2>
+                        <h2 id="guide-title"></h2>
 
-                        <p id="guide-description">Gå til Vare for at oprette en ny vare.</p>
+                        <p id="guide-description"></p>
                     </div>
                 </div>
 
@@ -57,48 +59,51 @@
             <div class="carousel-dots" id="carousel-dots"></div>
         </main>
 
-        <!--Only change the guideSteps array to modify the guide steps-->
+        <!-- Only change the guideSteps array to modify the guide steps -->
         <script>
             window.guideSteps = [
                 {
                     image: "{{ '/content/images/opretVare/step-1.png' | relative_url }}",
                     title: 'Gå til Vare',
-                    description: "",
+                    description: '',
                 },
                 {
                     image: "{{ '/content/images/indkob/step-2.png' | relative_url }}",
                     title: 'Gå til Indkøb',
-                    description: "Tryk på 'Indkøb' i menuen.",
+                    description: 'Tryk på "Indkøb" i menuen.',
                 },
                 {
                     image: "{{ '/content/images/indkob/step-3.png' | relative_url }}",
                     title: 'Gå til Igangværende indkøb',
-                    description: "Tryk på 'Igangværende indkøb' i sub-menuen. Derefter tryk på det indkøb, du vil færdiggøre.",
+                    description:
+                        'Tryk på "Igangværende indkøb" i sub-menuen. Derefter tryk på det indkøb, du vil færdiggøre.',
                 },
                 {
                     image: "{{ '/content/images/indkob/step-4.png' | relative_url }}",
                     title: 'Opret lagermodtagelse',
-                    description: "Tryk på den blå 'Opret som lagermodtagelse'.",
+                    description: 'Tryk på den blå "Opret som lagermodtagelse".',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-5.png' | relative_url }}",
                     title: 'Tjek antal og kostpris',
-                    description: "Tjek antal og kostpris for den tilføjede vare. Hvis en vare ikke findes på fakturaen så fjern den.",
+                    description:
+                        'Tjek antal og kostpris for den tilføjede vare. Hvis en vare ikke findes på fakturaen så fjern den.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-6.png' | relative_url }}",
                     title: 'Bekræft lagermodtagelse',
-                    description: "Tryk på den blå 'Bekræft', når alle varer er tjekket igennem.",
+                    description: 'Tryk på den blå "Bekræft", når alle varer er tjekket igennem.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-7.png' | relative_url }}",
                     title: 'Indtast fakturainformation',
-                    description: "Indtast fakturainformation for indkøbet.",
+                    description: 'Indtast fakturainformation for indkøbet.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-8.png' | relative_url }}",
                     title: 'E-conomic',
-                    description: "Tilføj indkøbet til e-conomic. Leverandøren er 'Labtech Data A/S' hvis modtagelsen er intern.",
+                    description:
+                        'Tilføj indkøbet til e-conomic. Leverandøren er "Labtech Data A/S" hvis modtagelsen er intern.',
                 },
             ];
         </script>

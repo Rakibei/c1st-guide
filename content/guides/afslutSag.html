@@ -5,8 +5,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!--Change <title>-->
+
+        <!-- Change <title> -->
         <title>Afslut Sag - C1st Guide</title>
 
         <link
@@ -21,7 +21,7 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <!--Change <h1> and <p>-->
+            <!-- Change <h1> and <p> -->
             <h1>Afslut Sag</h1>
 
             <p>Afslut en sag i C1st.</p>
@@ -33,9 +33,11 @@
 
                 <div class="carousel-content">
                     <div class="carousel-image">
-                        <img id="guide-image"
-                             src=""
-                             alt="">
+                        <img
+                            id="guide-image"
+                            src=""
+                            alt=""
+                        >
                     </div>
 
                     <div class="carousel-description">
@@ -57,19 +59,19 @@
             <div class="carousel-dots" id="carousel-dots"></div>
         </main>
 
-        <!--Only change the guideSteps array to modify the guide steps-->
+        <!-- Only change the guideSteps array to modify the guide steps -->
         <script>
             window.guideSteps = [
                 {
                     image: "{{ '/content/images/afslutSag/step-1.png' | relative_url }}",
                     title: 'Find sagen',
-                    description: 'Gå til "Sagstyring" og find den sag som skal afsluttes, tryk på den grønne knap "Meld Klar".',
+                    description:
+                        'Gå til "Sagstyring" og find den sag som skal afsluttes, tryk på den grønne knap "Meld Klar".',
                 },
                 {
                     image: "{{ '/content/images/afslutSag/step-2.png' | relative_url }}",
                     title: 'Vælg "Betal og Færdig"',
-                    description:
-                        'Under status, vælg "Betal og Færdig". Derefter tryk på "Betal".',
+                    description: 'Under status, vælg "Betal og Færdig". Derefter tryk på "Betal".',
                 },
                 {
                     image: "{{ '/content/images/afslutSag/step-3.png' | relative_url }}",

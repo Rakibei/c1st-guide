@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--Change <title>-->
+        <!-- Change <title> -->
         <title>Lagermodtagelse - C1st Guide</title>
 
         <link
@@ -21,7 +21,7 @@
         <header class="site-header">
             <a href="../../index.html">← Tilbage til start</a>
 
-            <!--Change <h1> and <p>-->
+            <!-- Change <h1> and <p> -->
             <h1>Lagermodtagelse</h1>
 
             <p>Lav en lagermodtagelse i C1st.</p>
@@ -33,9 +33,11 @@
 
                 <div class="carousel-content">
                     <div class="carousel-image">
-                        <img id="guide-image"
-                             src=""
-                             alt="">
+                        <img
+                            id="guide-image"
+                            src=""
+                            alt=""
+                        >
                     </div>
 
                     <div class="carousel-description">
@@ -57,48 +59,49 @@
             <div class="carousel-dots" id="carousel-dots"></div>
         </main>
 
-        <!--Only change the guideSteps array to modify the guide steps-->
+        <!-- Only change the guideSteps array to modify the guide steps -->
         <script>
             window.guideSteps = [
                 {
                     image: "{{ '/content/images/opretVare/step-1.png' | relative_url }}",
                     title: 'Gå til Vare',
-                    description: "",
+                    description: '',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-2.png' | relative_url }}",
                     title: 'Gå til Lager',
-                    description: "Tryk på 'Lager' i menuen.",
+                    description: 'Tryk på "Lager" i menuen.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-3.png' | relative_url }}",
                     title: 'Start ny lagermodtagelse',
-                    description: "Tryk på den blå 'Ny lagermodtagelse'.",
+                    description: 'Tryk på den blå "Ny lagermodtagelse".',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-4.png' | relative_url }}",
                     title: 'Tilføj vare',
-                    description: "Tilføj eller scan vare til lagermodtagelsen.",
+                    description: 'Tilføj eller scan vare til lagermodtagelsen.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-5.png' | relative_url }}",
                     title: 'Tjek antal og kostpris',
-                    description: "Tjek antal og kostpris for den tilføjede vare.",
+                    description: 'Tjek antal og kostpris for den tilføjede vare.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-6.png' | relative_url }}",
                     title: 'Bekræft lagermodtagelse',
-                    description: "Tryk på den blå 'Bekræft', når alle varer er tilføjet.",
+                    description: 'Tryk på den blå "Bekræft", når alle varer er tilføjet.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-7.png' | relative_url }}",
                     title: 'Indtast fakturainformation',
-                    description: "Indtast fakturainformation for lagermodtagelsen.",
+                    description: 'Indtast fakturainformation for lagermodtagelsen.',
                 },
                 {
                     image: "{{ '/content/images/lagermodtagelse/step-8.png' | relative_url }}",
                     title: 'E-conomic',
-                    description: "Tilføj lagermodtagelsen til e-conomic. Leverandøren er 'Labtech Data A/S' hvis modtagelsen er intern.",
+                    description:
+                        'Tilføj lagermodtagelsen til e-conomic. Leverandøren er "Labtech Data A/S" hvis modtagelsen er intern.',
                 },
             ];
         </script>
