@@ -1,0 +1,85 @@
+---
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Change <title>-->
+        <title>Afslut Sag - C1st Guide</title>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{{ '/content/images/favicon.png' | relative_url }}"
+        >
+        <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
+
+            <!--Change <h1> and <p>-->
+            <h1>Afslut Sag</h1>
+
+            <p>Afslut en sag i C1st.</p>
+        </header>
+
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
+
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img id="guide-image"
+                             src=""
+                             alt="">
+                    </div>
+
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step"></span>
+                            af
+                            <span id="total-steps"></span>
+                        </div>
+
+                        <h2 id="guide-title"></h2>
+
+                        <p id="guide-description"></p>
+                    </div>
+                </div>
+
+                <button class="carousel-button next">›</button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
+
+        <!--Only change the guideSteps array to modify the guide steps-->
+        <script>
+            window.guideSteps = [
+                {
+                    image: "{{ '/content/images/afslutSag/step-1.png' | relative_url }}",
+                    title: 'Find sagen',
+                    description: 'Gå til "Sagstyring" og find den sag som skal afsluttes, tryk på den grønne knap "Meld Klar".',
+                },
+                {
+                    image: "{{ '/content/images/afslutSag/step-2.png' | relative_url }}",
+                    title: 'Vælg "Betal og Færdig"',
+                    description:
+                        'Under status, vælg "Betal og Færdig". Derefter tryk på "Betal".',
+                },
+                {
+                    image: "{{ '/content/images/afslutSag/step-3.png' | relative_url }}",
+                    title: 'Færdiggør betaling',
+                    description:
+                        'Færdiggør betalingen for sagen, dette vil automatisk markere sagen som afsluttet.',
+                },
+            ];
+        </script>
+
+        <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
+    </body>
+</html>
