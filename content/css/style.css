@@ -59,10 +59,10 @@ body {
     text-decoration: none;
 }
 
-    .site-header h1 {
-        font-size: 36px;
-        font-family: 'bwgradual', sans-serif
-    }
+.site-header h1 {
+    font-size: 36px;
+    font-family: 'bwgradual', sans-serif
+}
 
 /* Option cards */
 .option-grid {
