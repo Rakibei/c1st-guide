@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Lav Salg - C1st Guide</title>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../images/favicon.png"
+        >
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
+
+            <h1>Giv Rabat</h1>
+
+            <p>Giv en rabat i C1st.</p>
+        </header>
+
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
+
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img
+                            id="guide-image"
+                            src="../images/givRabat/step-1.png"
+                            alt="Step 1"
+                        >
+                    </div>
+
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step"></span>
+                            af
+                            <span id="total-steps"></span>
+                        </div>
+
+                        <h2 id="guide-title"></h2>
+
+                        <p id="guide-description"></p>
+                    </div>
+                </div>
+
+                <button class="carousel-button next">›</button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
+
+        <script>
+            window.guideSteps = [
+                {
+                    image: "../images/givRabat/step-1.png",
+                    title: 'Tryk på "%" ikonet',
+                    description: 'Ved kurven tryk på "%" ikonet, enten for hele ordren eller enkelte varer.',
+                },
+                {
+                    image: "../images/givRabat/step-2.png",
+                    title: 'Vælg rabat',
+                    description:
+                        'Skriv den mængde rabat, du vil give. Der kan vælges mellem procent, et fratrukket beløb, eller en fast beløb. Til sidst vælg rabatkategori og tryk "Tilføj rabat".',
+                },
+                {
+                    image: "../images/givRabat/step-3.png",
+                    title: 'Tjek og færdiggør køb',
+                    description:
+                        'Tjek for at sikre, at rabatten er korrekt tilføjet. Derefter tryk på "Betal", og færdiggør købet.',
+                },
+            ];
+        </script>
+
+        <script src="../js/carousel.js"></script>
+    </body>
+</html>
