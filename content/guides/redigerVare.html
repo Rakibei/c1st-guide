@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Change <title> -->
-        <title>Lav Salg - C1st Guide</title>
+        <title>Rediger Vare - C1st Guide</title>
 
         <link
             rel="icon"
@@ -20,9 +20,9 @@
             <a href="../../Start Guide.html">← Tilbage til start</a>
 
             <!-- Change <h1> and <p> -->
-            <h1>Lav Salg</h1>
+            <h1>Rediger Vare</h1>
 
-            <p>Lav et salg i C1st.</p>
+            <p>Rediger en vare i C1st.</p>
         </header>
 
         <main>
@@ -40,16 +40,14 @@
 
                     <div class="carousel-description">
                         <div class="step-number">
-                            Trin <span id="current-step">1</span>
+                            Trin <span id="current-step"></span>
                             af
-                            <span id="total-steps">3</span>
+                            <span id="total-steps"></span>
                         </div>
 
-                        <h2 id="guide-title">Gå til Kasse</h2>
+                        <h2 id="guide-title"></h2>
 
-                        <p id="guide-description">
-                            Gå til Kasse og scan/vælg den vare, som kunden vil købe.
-                        </p>
+                        <p id="guide-description"></p>
                     </div>
                 </div>
 
@@ -63,21 +61,21 @@
         <script>
             window.guideSteps = [
                 {
-                    image: "../images/lavSalg/step-1.png",
-                    title: 'Gå til Kasse',
-                    description: 'Gå til Kasse og scan/vælg den vare, som kunden vil købe.',
+                    image: "../images/opretVare/step-1.png",
+                    title: 'Gå til Vare',
+                    description: 'Gå til Vare for at redigere en eksisterende vare.',
                 },
                 {
-                    image: "../images/lavSalg/step-2.png",
-                    title: 'Tjek kassen',
+                    image: "../images/redigerVare/step-2.png",
+                    title: 'Vælg vare for redigering',
                     description:
-                        'Når alle vare er tilføjet, dobbelttjek for at sikre, at alt er korrekt. Derefter tryk på "Betal".',
+                        'Find den vare, du vil redigere, og klik på den for at åbne redigeringssiden.',
                 },
                 {
-                    image: "../images/lavSalg/step-3.png",
-                    title: 'Vælg betalingsmetode',
+                    image: "../images/redigerVare/step-3.png",
+                    title: 'Opdater vareinformation',
                     description:
-                        'Vælg den betalingsmetode, som kunden vil bruge for at afslutte salget. Du kan udskrive en kvittering efter salget er afsluttet.',
+                        'Opdater de nødvendige oplysninger om varen. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på "Gem" for at gemme ændringerne.',
                 },
             ];
         </script>
