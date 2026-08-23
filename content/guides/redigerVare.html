@@ -1,0 +1,85 @@
+---
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Change <title>-->
+        <title>Rediger Vare - C1st Guide</title>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{{ '/content/images/favicon.png' | relative_url }}"
+        >
+        <link rel="stylesheet" href="{{ '/content/css/style.css' | relative_url }}">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">← Tilbage til start</a>
+
+            <!--Change <h1> and <p>-->
+            <h1>Rediger Vare</h1>
+
+            <p>Rediger en vare i C1st.</p>
+        </header>
+
+        <main>
+            <div class="guide-carousel">
+                <button class="carousel-button previous">‹</button>
+
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img id="guide-image"
+                             src=""
+                             alt="">
+                    </div>
+
+                    <div class="carousel-description">
+                        <div class="step-number">
+                            Trin <span id="current-step"></span>
+                            af
+                            <span id="total-steps"></span>
+                        </div>
+
+                        <h2 id="guide-title"></h2>
+
+                        <p id="guide-description"></p>
+                    </div>
+                </div>
+
+                <button class="carousel-button next">›</button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </main>
+
+        <!--Only change the guideSteps array to modify the guide steps-->
+        <script>
+            window.guideSteps = [
+                {
+                    image: "{{ '/content/images/opretVare/step-1.png' | relative_url }}",
+                    title: 'Gå til Vare',
+                    description: 'Gå til Vare for at redigere en eksisterende vare.',
+                },
+                {
+                    image: "{{ '/content/images/redigerVare/step-2.png' | relative_url }}",
+                    title: 'Vælg vare for redigering',
+                    description:
+                        "Find den vare, du vil redigere, og klik på den for at åbne redigeringssiden.",
+                },
+                {
+                    image: "{{ '/content/images/redigerVare/step-3.png' | relative_url }}",
+                    title: 'Opdater vareinformation',
+                    description:
+                        "Opdater de nødvendige oplysninger om varen. Leverandør er hvor varen er købt, mærke er varens mærke, og kategorier bruges til regnskab. Tryk til sidst på 'Gem' for at gemme ændringerne.",
+                },
+            ];
+        </script>
+
+        <script src="{{ '/content/js/carousel.js' | relative_url }}"></script>
+    </body>
+</html>
