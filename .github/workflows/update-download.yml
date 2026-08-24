@@ -45,6 +45,8 @@ jobs:
                     --exclude='.prettierignore' \
                     --exclude='prettier.config.mjs' \
                     --exclude='stylelint.config.mjs' \
+                    --exclude='Gemfile' \
+                    --exclude='Gemfile.lock' \
                     ./ /tmp/download/
 
             # ------------------------------------------------------------
