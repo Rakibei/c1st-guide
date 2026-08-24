@@ -114,7 +114,7 @@ body {
 .guide-carousel {
     max-width: 90%;
     height: var(--carousel-height);
-    margin: 40px auto 10px;
+    margin: 5px auto 10px;
     display: flex;
     align-items: center;
     gap: 15px;
